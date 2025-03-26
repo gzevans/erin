@@ -2,8 +2,8 @@
 FROM caddy:2.8.4-builder AS builder
 
 RUN xcaddy build \
-    --with github.com/caddyserver/replace-response
-    --with github.com/caddy-dns/cloudflare
+    --with github.com/caddyserver/replace-response \
+           github.com/caddy-dns/cloudflare
 
 # 2 - Set up Caddy and the frontend built beforehand
 FROM caddy:2.8.4-alpine
